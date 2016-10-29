@@ -1,0 +1,13 @@
+[user]
+	name = scogliani
+	email = simon.cogliani@gmail.com
+[credential]
+
+[alias]
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+  st = status -sb
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[color]
+	ui = auto
+[credential]
+	helper = store
