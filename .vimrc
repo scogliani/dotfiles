@@ -1,15 +1,18 @@
 " This .vimrc needs junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
+Plug 'vim-scripts/darktango.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/Conque-GDB'
-Plug 'altercation/vim-colors-solarized', { 'dir': '~/.vim/colors' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
+
+let mapleader = " "
 
 " NERDTree
 nnoremap <C-e> :NERDTreeToggle<CR>
@@ -20,8 +23,15 @@ let NERDTreeMinimalUI = 1
 nnoremap <C-t> :UndotreeToggle<CR>
 let g:undotree_SplitWidth = 30
 
+set undofile
+set undodir=~/.vim/undodir
+
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
 set nu
 syntax enable
+colorscheme darktango
 
 " vim-cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
@@ -39,3 +49,10 @@ let ruby_fold=1               " Ruby
 let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XM
+
+highlight OverLength ctermbg=DarkBlue ctermfg=White guibg=NONE
+set colorcolumn=81
+ 
+set expandtab
+set tabstop=4
+set shiftwidth=4
