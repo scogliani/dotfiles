@@ -15,12 +15,12 @@ call plug#end()
 let mapleader = " "
 
 " NERDTree
-nnoremap <C-e> :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
 let NERDTreeWinSize = 30
 let NERDTreeMinimalUI = 1
 
 " Undotree
-nnoremap <C-t> :UndotreeToggle<CR>
+nnoremap <leader>g :UndotreeToggle<CR>
 let g:undotree_SplitWidth = 30
 
 set undofile
