@@ -157,3 +157,6 @@ bar {
 
 # Opening default browser
 bindsym $mod+Shift+m exec sensible-browser 
+
+# Locking screen
+bindsym $mod+Shift+x exec i3lock -c 000000 -d
