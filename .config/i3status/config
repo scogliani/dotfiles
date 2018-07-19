@@ -5,6 +5,7 @@ general {
 }
 
 order += "disk /"
+order += "volume master"
 order += "run_watch DHCP"
 order += "path_exists VPN"
 order += "wireless _first_"
@@ -53,4 +54,12 @@ cpu_usage {
 
 disk "/" {
         format = "%avail"
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }
