@@ -20,6 +20,7 @@ call plug#end()
 let mapleader = " "
 
 " NERDTree
+" for more information: help nerdtree.txt
 nnoremap <leader>e :NERDTreeToggle<CR>
 let NERDTreeWinSize = 30
 let NERDTreeMinimalUI = 1
