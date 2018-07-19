@@ -27,7 +27,6 @@ let NERDTreeMinimalUI = 1
 " Undotree
 " for more information: help undotree.txt
 nnoremap <leader>g :UndotreeToggle<CR>
-let g:undotree_SplitWidth = 30
 let g:undotree_WindowLayout = 2
 let g:undotree_SetFocusWhenToggle = 1
 if has("persistent_undo")
