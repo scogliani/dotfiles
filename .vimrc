@@ -25,15 +25,23 @@ let NERDTreeWinSize = 30
 let NERDTreeMinimalUI = 1
 
 " Undotree
+" for more information: help undotree.txt
 nnoremap <leader>g :UndotreeToggle<CR>
 let g:undotree_SplitWidth = 30
-
-set undofile
-set undodir=~/.vim/undodir
+let g:undotree_WindowLayout = 2
+let g:undotree_SetFocusWhenToggle = 1
+if has("persistent_undo")
+  set undodir=~/.vim/undodir
+  if !isdirectory(&undodir)
+    call mkdir(&undodir, "p")
+  endif
+  set undofile
+endif
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
+" darktango
 set nu
 syntax enable
 colorscheme darktango
@@ -43,9 +51,9 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 
+" folding setup activation
 set foldmethod=syntax
 set foldlevelstart=1
-
 let javaScript_fold=1         " JavaScript
 let perl_fold=1               " Perl
 let php_folding=1             " PHP
