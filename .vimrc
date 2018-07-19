@@ -19,6 +19,27 @@ call plug#end()
 
 let mapleader = " "
 
+set nu
+syntax enable
+
+highlight OverLength ctermbg=DarkBlue ctermfg=White guibg=NONE
+set colorcolumn=81
+"
+" folding setup activation
+set foldmethod=syntax
+set foldlevelstart=1
+let javaScript_fold=1         " JavaScript
+let perl_fold=1               " Perl
+let php_folding=1             " PHP
+let r_syntax_folding=1        " R
+let ruby_fold=1               " Ruby
+let sh_fold_enabled=1         " sh
+let vimsyn_folding='af'       " Vim script
+let xml_syntax_folding=1      " XML
+
+" darktango
+colorscheme darktango
+
 " NERDTree
 " for more information: help nerdtree.txt
 nnoremap <leader>e :NERDTreeToggle<CR>
@@ -41,31 +62,8 @@ endif
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
-" darktango
-set nu
-syntax enable
-colorscheme darktango
 
 " vim-cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_concepts_highlight = 1
-
-" folding setup activation
-set foldmethod=syntax
-set foldlevelstart=1
-let javaScript_fold=1         " JavaScript
-let perl_fold=1               " Perl
-let php_folding=1             " PHP
-let r_syntax_folding=1        " R
-let ruby_fold=1               " Ruby
-let sh_fold_enabled=1         " sh
-let vimsyn_folding='af'       " Vim script
-let xml_syntax_folding=1      " XML
-
-highlight OverLength ctermbg=DarkBlue ctermfg=White guibg=NONE
-set colorcolumn=81
- 
-set expandtab
-set tabstop=4
-set shiftwidth=4
