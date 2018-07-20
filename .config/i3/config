@@ -166,5 +166,5 @@ bindsym $mod+Shift+x exec i3lock -c 000000 -d
 ## XF86EventCommands
 # Audio
 bindsym XF86AudioMute exec "echo \\"set 'Master' toggle \nset 'Headphone' toggle\nset 'Speaker' toggle\\" | amixer -q -s"
-bindsym XF86AudioLowerVolume exec "amixer -q sset 'Master' 5%-"
-bindsym XF86AudioRaiseVolume exec "amixer -q sset 'Master' 5%+"
+bindsym XF86AudioLowerVolume exec "echo \\"set 'Master' unmute \nset 'Headphone' unmute\nset 'Speaker' unmute\nsset 'Master' 5%-\\" | amixer -q -s"
+bindsym XF86AudioRaiseVolume exec "echo \\"set 'Master' unmute \nset 'Headphone' unmute\nset 'Speaker' unmute\nsset 'Master' 5%+\\" | amixer -q -s"
