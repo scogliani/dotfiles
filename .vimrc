@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
@@ -24,6 +25,16 @@ syntax enable
 
 highlight OverLength ctermbg=DarkBlue ctermfg=White guibg=NONE
 set colorcolumn=81
+
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+map <silent> <leader>/ :nohlsearch<CR>
+
+" ctags
+set tags=./tags;/
+
 "
 " folding setup activation
 set foldmethod=syntax
@@ -39,6 +50,14 @@ let xml_syntax_folding=1      " XML
 
 " darktango
 colorscheme darktango
+
+" ctrlp
+" for more information: help ctrlp.txt
+nnoremap <leader>. :CtrlPTag<CR>
+
+" tagbar
+" for more information: tagbar.txt
+nnoremap <silent> <leader>q :TagbarToggle<CR>
 
 " NERDTree
 " for more information: help nerdtree.txt
