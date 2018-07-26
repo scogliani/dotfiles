@@ -57,6 +57,9 @@ nnoremap <leader>. :CtrlPTag<CR>
 
 " tagbar
 " for more information: tagbar.txt
+let g:tagbar_left=1
+let g:tagbar_autofocus=1
+
 nnoremap <silent> <leader>q :TagbarToggle<CR>
 
 " NERDTree
