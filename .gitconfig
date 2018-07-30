@@ -28,7 +28,7 @@
   m = commit --amend --verbose
   st = status -sb
   subi = submodule init
-  subu = submodule update
+  subu = submodule update --init --recursive
 [color]
   ui = auto
 [credential]
