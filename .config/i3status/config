@@ -26,7 +26,7 @@ ethernet _first_ {
 }
 
 battery 0 {
-        format = "%status %percentage %remaining %emptytime"
+        format = "%status %percentage %emptytime"
         format_down = "No battery"
         status_chr = "⚇ CHR"
         status_bat = "⚡ BAT"

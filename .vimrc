@@ -56,10 +56,9 @@ colorscheme darktango
 nnoremap <leader>. :CtrlPTag<CR>
 
 " tagbar
-" for more information: tagbar.txt
+" for more information: help tagbar.txt
 let g:tagbar_left=1
 let g:tagbar_autofocus=1
-
 nnoremap <silent> <leader>q :TagbarToggle<CR>
 
 " NERDTree
@@ -82,6 +81,7 @@ if has("persistent_undo")
 endif
 
 " YouCompleteMe
+" for more information: help youcompleteme
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " vim-cpp-enhanced-highlight
