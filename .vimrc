@@ -32,6 +32,9 @@ set smartcase
 set incsearch
 map <silent> <leader>/ :nohlsearch<CR>
 
+" Automatically removing all trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
+
 " ctags
 set tags=./tags;/
 
