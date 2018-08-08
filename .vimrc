@@ -6,15 +6,16 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-scripts/darktango.vim'
+Plug 'Valloric/YouCompleteMe'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-scripts/Conque-GDB'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'majutsushi/tagbar'
+Plug 'mbbill/undotree'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'scrooloose/nerdtree'
-Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
-Plug 'Valloric/YouCompleteMe'
-Plug 'majutsushi/tagbar'
+Plug 'vim-scripts/Conque-GDB'
+Plug 'vim-scripts/darktango.vim'
 
 call plug#end()
 
@@ -24,7 +25,7 @@ set nu
 syntax enable
 
 highlight OverLength ctermbg=DarkBlue ctermfg=White guibg=NONE
-set colorcolumn=81
+set colorcolumn=80
 
 set hlsearch
 set ignorecase
