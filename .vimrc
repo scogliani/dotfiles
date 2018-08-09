@@ -6,6 +6,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -86,9 +87,14 @@ endif
 
 " YouCompleteMe
 " for more information: help youcompleteme
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+" let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " vim-cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_concepts_highlight = 1
+
+" vim-markdown-plugin
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_browser='Firefox'
+let vim_markdown_preview_github=1
