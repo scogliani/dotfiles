@@ -6,3 +6,7 @@
 	path = .light
 	url = https://github.com/haikarainen/light.git
 	branch = master
+[submodule "yadm"]
+	path = .yadm
+	url = https://github.com/TheLocehiliosan/yadm.git
+	branch = master
