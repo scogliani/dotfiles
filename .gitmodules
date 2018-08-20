@@ -1,8 +1,8 @@
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
+	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
 	branch = master
 [submodule "light"]
-	path = light
+	path = .light
 	url = https://github.com/haikarainen/light.git
 	branch = master
