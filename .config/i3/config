@@ -158,12 +158,14 @@ bar {
 }
 
 # Opening default browser
-bindsym $mod+Shift+m exec sensible-browser 
+bindsym $mod+Shift+m exec sensible-browser
 
 # Locking screen
 bindsym $mod+Shift+x exec i3lock -c 000000 -d
 
-## XF86EventCommands
+exec --no-startup-id xsetroot -solid "#000000"
+
+# XF86EventCommands
 # Audio
 bindsym XF86AudioMute exec "echo \\"set 'Master' toggle \nset 'Headphone' toggle\nset 'Speaker' toggle\\" | amixer -q -s"
 bindsym XF86AudioLowerVolume exec "echo \\"set 'Master' unmute \nset 'Headphone' unmute\nset 'Speaker' unmute\nsset 'Master' 5%-\\" | amixer -q -s"
