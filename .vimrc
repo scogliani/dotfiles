@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/Conque-GDB'
 Plug 'vim-scripts/darktango.vim'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -40,7 +41,6 @@ autocmd BufWritePre * %s/\s\+$//e
 " ctags
 set tags=./tags;/
 
-"
 " folding setup activation
 set foldmethod=syntax
 set foldlevelstart=1
@@ -52,6 +52,13 @@ let ruby_fold=1               " Ruby
 let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
+
+" template files
+if has("autocmd")
+  augroup templates
+    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
+  augroup END
+endif
 
 " darktango
 colorscheme darktango

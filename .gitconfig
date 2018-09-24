@@ -5,5 +5,7 @@
   email = simon.cogliani@gmail.com
 [color]
   ui = auto
+[core]
+  editor = vim
 [credential]
   helper = store
