@@ -163,7 +163,12 @@ bindsym $mod+Shift+m exec sensible-browser
 # Locking screen
 bindsym $mod+Shift+x exec i3lock -c 000000 -d
 
+# Background wallpaper
 exec --no-startup-id xsetroot -solid "#000000"
+
+# Moving windows multi-screen monitors
+bindsym $mod+bracketright move workspace to output right
+bindsym $mod+bracketleft move workspace to output left
 
 # XF86EventCommands
 # Audio
