@@ -105,3 +105,6 @@ let g:cpp_concepts_highlight = 1
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_browser='Firefox'
 let vim_markdown_preview_github=1
+
+" editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
