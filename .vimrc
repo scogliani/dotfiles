@@ -8,7 +8,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Valloric/YouCompleteMe'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
@@ -62,10 +63,6 @@ endif
 
 " darktango
 colorscheme darktango
-
-" ctrlp
-" for more information: help ctrlp.txt
-nnoremap <leader>. :CtrlPTag<CR>
 
 " tagbar
 " for more information: help tagbar.txt
