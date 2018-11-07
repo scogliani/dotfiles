@@ -2,6 +2,7 @@
   a = add
   ap = add -p
   br = branch
+  bl = blame
   bra = branch -a -vvv
   brd = branch -d
   c = commit --verbose
@@ -26,4 +27,3 @@
   st = status -sb
   subi = submodule init
   subu = submodule update --init --recursive
-
