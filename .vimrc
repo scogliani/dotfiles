@@ -7,7 +7,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'JamshedVesuna/vim-markdown-preview'
-Plug 'Valloric/YouCompleteMe'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -15,10 +14,15 @@ Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/Conque-GDB'
-Plug 'vim-scripts/darktango.vim'
 Plug 'w0rp/ale'
+
+" colorscheme
+Plug 'vim-scripts/darktango.vim'
+Plug 'ewilazarus/preto'
+Plug 'pgdouyon/vim-yin-yang'
 
 call plug#end()
 
@@ -61,8 +65,8 @@ if has("autocmd")
   augroup END
 endif
 
-" darktango
-colorscheme darktango
+" colorscheme
+colorscheme yang
 
 " tagbar
 " for more information: help tagbar.txt
@@ -88,10 +92,6 @@ if has("persistent_undo")
   endif
   set undofile
 endif
-
-" YouCompleteMe
-" for more information: help youcompleteme
-" let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " vim-cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
