@@ -66,7 +66,7 @@ if has("autocmd")
 endif
 
 " colorscheme
-colorscheme yang
+colorscheme darktango
 
 " tagbar
 " for more information: help tagbar.txt
@@ -105,3 +105,20 @@ let vim_markdown_preview_github=1
 
 " editorconfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" fugitive
+nnoremap <silent> <leader>st :Gstatus<CR>
+nnoremap <silent> <leader>d  :Gdiff<CR>
+nnoremap <silent> <leader>c  :Gcommit<CR>
+nnoremap <silent> <leader>bl :Gblame<CR>
+nnoremap <silent> <leader>ge :Gedit<CR>
+nnoremap <silent> <leader>gE :Gedit<space>
+nnoremap <silent> <leader>gr :Gread<CR>
+nnoremap <silent> <leader>gR :Gread<space>
+nnoremap <silent> <leader>a  :Gwrite<CR>
+nnoremap <silent> <leader>gW :Gwrite!<CR>
+nnoremap <silent> <leader>gq :Gwq<CR>
+nnoremap <silent> <leader>gQ :Gwq!<CR>
+
+" fzf
+"

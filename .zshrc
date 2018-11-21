@@ -97,4 +97,13 @@ source ~/.aliases
 source ~/.exports
 source ~/.sources
 
+export HISTSIZE=999999999
+export SAVEHIST=${HISTSIZE}
+#append into history file
+setopt INC_APPEND_HISTORY
+##save only one command if 2 common are same and consistent
+setopt HIST_IGNORE_DUPS
+##add timestamp for each entry
+setopt EXTENDED_HISTORY
+
 eval "$(pyenv init -)"
