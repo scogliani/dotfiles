@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-f():
+def f():
     pass
 
 if __name__ == "__main__":
