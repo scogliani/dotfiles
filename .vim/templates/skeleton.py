@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-def f():
+def main():
     pass
 
 if __name__ == "__main__":
-    f()
+    main()
