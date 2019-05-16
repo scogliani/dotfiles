@@ -1,7 +1,13 @@
 # -*- coding: utf-8 -*-
 
+import sys
+
 def main():
-    pass
+    return 0
 
 if __name__ == "__main__":
-    main()
+    try:
+        sys.exit(main())
+    except Exception as e:
+        print(e)
+        raise SystemExit(0)
