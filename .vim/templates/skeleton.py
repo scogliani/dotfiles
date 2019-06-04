@@ -10,4 +10,4 @@ if __name__ == "__main__":
         sys.exit(main())
     except Exception as e:
         print(e)
-        raise SystemExit(0)
+        raise SystemExit(1)
