@@ -18,6 +18,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/Conque-GDB'
 Plug 'w0rp/ale'
+Plug 'rust-lang/rust.vim'
+Plug 'rhysd/vim-clang-format'
 
 " colorscheme
 Plug 'vim-scripts/darktango.vim'
@@ -31,7 +33,7 @@ let mapleader = " "
 set nu
 syntax enable
 
-highlight OverLength ctermbg=DarkBlue ctermfg=White guibg=NONE
+highlight OverLength ctermbg=DarkBlue ctermfg=white guibg=#592929
 set colorcolumn=80
 
 set hlsearch
@@ -78,14 +80,14 @@ nnoremap <silent> <leader>q :TagbarToggle<CR>
 " NERDTree
 " for more information: help nerdtree.txt
 nnoremap <leader>e :NERDTreeToggle<CR>
-let NERDTreeWinSize = 30
-let NERDTreeMinimalUI = 1
+let NERDTreeWinSize=30
+let NERDTreeMinimalUI=1
 
 " Undotree
 " for more information: help undotree.txt
 nnoremap <leader>g :UndotreeToggle<CR>
-let g:undotree_WindowLayout = 2
-let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_WindowLayout=2
+let g:undotree_SetFocusWhenToggle=1
 if has("persistent_undo")
   set undodir=~/.vim/undodir
   if !isdirectory(&undodir)
@@ -95,9 +97,9 @@ if has("persistent_undo")
 endif
 
 " vim-cpp-enhanced-highlight
-let g:cpp_class_scope_highlight = 1
-let g:cpp_experimental_simple_template_highlight = 1
-let g:cpp_concepts_highlight = 1
+let g:cpp_class_scope_highlight=1
+let g:cpp_experimental_simple_template_highlight=1
+let g:cpp_concepts_highlight=1
 
 " vim-markdown-plugin
 let vim_markdown_preview_hotkey='<C-m>'
@@ -105,7 +107,9 @@ let vim_markdown_preview_browser='Firefox'
 let vim_markdown_preview_github=1
 
 " editorconfig
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+let g:EditorConfig_core_mode="external_command"
+let g:EditorConfig_exec_path="/usr/bin/editorconfig"
+let g:EditorConfig_exclude_patterns=['fugitive://.*']
 
 " fugitive
 nnoremap <silent> <leader>st :Gstatus<CR>
@@ -123,3 +127,10 @@ nnoremap <silent> <leader>gQ :Gwq!<CR>
 
 " fzf
 "
+
+" rust
+nnoremap <leader>rf :RustFmt<CR>
+let g:rustfmt_autosave = 1
+
+" clang-format
+nnoremap <leader>cf :ClangFormat<CR>

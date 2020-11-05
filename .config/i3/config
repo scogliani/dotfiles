@@ -180,4 +180,4 @@ bindsym XF86AudioRaiseVolume exec "echo \\"set 'Master' unmute \nset 'Headphone'
 bindsym XF86MonBrightnessUp   exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
-exec --no-startup-id redshift
+exec --no-startup-id redshift-gtk

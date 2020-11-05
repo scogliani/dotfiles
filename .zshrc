@@ -107,3 +107,5 @@ setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 
 eval "$(pyenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
