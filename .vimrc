@@ -131,16 +131,13 @@ nnoremap <silent> <leader>gQ :Gwq!<CR>
 
 " rust
 autocmd FileType rust nnoremap <leader>f :RustFmt<CR>
-let g:rustfmt_autosave = 1
 
 " clang-format
 autocmd FileType c noremap <leader>f :ClangFormat<CR>
 autocmd FileType cpp noremap <leader>f :ClangFormat<CR>
 
 " autopep8
-autocmd FileType python noremap <buffer> <leader>f :call Autopep8()<CR>
-let g:autopep8_max_line_length=79
-let g:autopep8_indent_size=2
+autocmd FileType python noremap <buffer> <leader>f :Autopep8<CR>
 
 " coc.nvim
 autocmd FileType json syntax match Comment +\/\/.\+$+

@@ -1,14 +1,14 @@
 [include]
   path = ~/.git-alias
 [user]
-  name = scogliani
+  name = sico
   email = simon.cogliani@gmail.com
 [color]
   ui = auto
 [core]
   editor = vim
 [credential]
-	helper = cache --timeout 30000
+	helper = cache --timeout 86400
 [push]
   default = simple
 [filter "lfs"]
