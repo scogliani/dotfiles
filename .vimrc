@@ -137,7 +137,7 @@ autocmd FileType c noremap <leader>f :ClangFormat<CR>
 autocmd FileType cpp noremap <leader>f :ClangFormat<CR>
 
 " autopep8
-autocmd FileType python noremap <buffer> <leader>f :Autopep8<CR>
+autocmd FileType python noremap <buffer> <leader>f :call Autopep8()<CR>
 
 " coc.nvim
 autocmd FileType json syntax match Comment +\/\/.\+$+
