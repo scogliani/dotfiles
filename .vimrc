@@ -6,7 +6,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -20,6 +20,7 @@ Plug 'vim-scripts/Conque-GDB'
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
+Plug 'tell-k/vim-autopep8'
 
 " colorscheme
 Plug 'vim-scripts/darktango.vim'
@@ -101,10 +102,10 @@ let g:cpp_class_scope_highlight=1
 let g:cpp_experimental_simple_template_highlight=1
 let g:cpp_concepts_highlight=1
 
-" vim-markdown-plugin
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_browser='Firefox'
-let vim_markdown_preview_github=1
+" markdown-preview
+nmap <C-s> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
+nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " editorconfig
 let g:EditorConfig_core_mode="external_command"
@@ -129,8 +130,39 @@ nnoremap <silent> <leader>gQ :Gwq!<CR>
 "
 
 " rust
-nnoremap <leader>rf :RustFmt<CR>
+autocmd FileType rust nnoremap <leader>f :RustFmt<CR>
 let g:rustfmt_autosave = 1
 
 " clang-format
-nnoremap <leader>cf :ClangFormat<CR>
+autocmd FileType c noremap <leader>f :ClangFormat<CR>
+autocmd FileType cpp noremap <leader>f :ClangFormat<CR>
+
+" autopep8
+autocmd FileType python noremap <buffer> <leader>f :call Autopep8()<CR>
+let g:autopep8_max_line_length=79
+let g:autopep8_indent_size=2
+
+" coc.nvim
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" ale
+nmap <silent> <C-e> <Plug>(ale_next_wrap)
+
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+        \   '%d⨉ %d⚠ ',
+        \   all_non_errors,
+        \   all_errors
+        \)
+endfunction
+
+set statusline+=%=
+set statusline+=\ %{LinterStatus()}
+
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'

@@ -8,7 +8,7 @@
 [core]
   editor = vim
 [credential]
-	helper = cache
+	helper = cache --timeout 30000
 [push]
   default = simple
 [filter "lfs"]
