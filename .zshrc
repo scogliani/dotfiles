@@ -7,7 +7,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=random
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -15,6 +15,7 @@ ZSH_THEME="robbyrussell"
 # looking in ~/.oh-my-zsh/themes/
 # An empty array have no effect
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=( $(ls ~/.oh-my-zsh/themes/ | xargs basename -s .zsh-theme | awk '{printf("%s ", $0)}'))
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -59,8 +60,10 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git ubuntu
+  git ubuntu ssh-agent python
 )
+
+zstyle :omz:plugins:ssh-agent identities bitbucket
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,16 +99,5 @@ source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 source ~/.exports
 source ~/.sources
-
-export HISTSIZE=999999999
-export SAVEHIST=${HISTSIZE}
-#append into history file
-setopt INC_APPEND_HISTORY
-##save only one command if 2 common are same and consistent
-setopt HIST_IGNORE_DUPS
-##add timestamp for each entry
-setopt EXTENDED_HISTORY
-
-eval "$(pyenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

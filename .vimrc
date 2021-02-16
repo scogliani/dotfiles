@@ -21,6 +21,9 @@ Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'tell-k/vim-autopep8'
+Plug 'pbondoer/vim-42header'
+Plug 'wakatime/vim-wakatime'
+Plug 'mileszs/ack.vim'
 
 " colorscheme
 Plug 'vim-scripts/darktango.vim'
@@ -34,8 +37,8 @@ let mapleader = " "
 set nu
 syntax enable
 
-highlight OverLength ctermbg=DarkBlue ctermfg=white guibg=#592929
-set colorcolumn=80
+" highlight OverLength ctermbg=DarkBlue ctermfg=white guibg=#592929
+" set colorcolumn=81
 
 set hlsearch
 set ignorecase
@@ -45,9 +48,6 @@ map <silent> <leader>/ :nohlsearch<CR>
 
 " Automatically removing all trailing whitespace
 autocmd BufWritePre * %s/\s\+$//e
-
-" ctags
-set tags=./tags;/
 
 " folding setup activation
 set foldmethod=syntax
@@ -74,6 +74,7 @@ colorscheme darktango
 
 " tagbar
 " for more information: help tagbar.txt
+set tags=./tags;/
 let g:tagbar_left=1
 let g:tagbar_autofocus=1
 nnoremap <silent> <leader>q :TagbarToggle<CR>
@@ -108,9 +109,11 @@ nmap <M-s> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " editorconfig
+" for more information: help editorconfig.txt
 let g:EditorConfig_core_mode="external_command"
 let g:EditorConfig_exec_path="/usr/bin/editorconfig"
 let g:EditorConfig_exclude_patterns=['fugitive://.*']
+let g:EditorConfig_max_line_indicator="line"
 
 " fugitive
 nnoremap <silent> <leader>st :Gstatus<CR>
@@ -158,7 +161,21 @@ function! LinterStatus() abort
         \)
 endfunction
 
+" ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+set statusline=
+set statusline+=\ %f
+set statusline+=%m
 set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
 set statusline+=\ %{LinterStatus()}
 
 let g:ale_sign_error = '●'
