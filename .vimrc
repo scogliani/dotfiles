@@ -166,6 +166,10 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+let g:ack_mappings = {
+      \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
+      \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
+
 set statusline=
 set statusline+=\ %f
 set statusline+=%m

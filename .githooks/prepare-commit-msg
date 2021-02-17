@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# from: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
+
+firstLine=`head -2 $1 | tail -1`
+# Testing that the file starts with a comment, not yet a real commit ;)
+if [[ $firstLine == \#* ]]; then
+  cat << LIMIT_STRING > .prepare-commit-msg-temp
+<type>(<scope>): <summary>
+
+<body>
+
+<footer>
+# type: build|ci|docs|feat|fix|perf|refactor|test
+# scope: animations|bazel|benchpress|common|compiler|compiler-cli|core
+# |elements|forms|http|language-service|localize|platform-browser
+# │platform-browser-dynamic|platform-server|router|service-worker
+# │upgrade|zone.js|packaging|changelog|dev-infra|docs-infra|migrations
+# │ngcc|ve
+# summary: in present tense. Not capitalized. No period at the end.
+LIMIT_STRING
+
+  { cat .prepare-commit-msg-temp; cat $1; } > .prepare-commit-msg-temp2
+  cat .prepare-commit-msg-temp2 > $1
+  rm .prepare-commit-msg-temp .prepare-commit-msg-temp2
+fi
