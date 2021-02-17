@@ -1,7 +1,7 @@
 [include]
   path = ~/.git-alias
 [user]
-  name = sico
+  name = scogliani
   email = simon.cogliani@gmail.com
 [color]
   ui = auto
