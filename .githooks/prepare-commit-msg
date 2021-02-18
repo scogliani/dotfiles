@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# from: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
 
 firstLine=`head -2 $1 | tail -1`
 # Testing that the file starts with a comment, not yet a real commit ;)
@@ -17,6 +16,7 @@ if [[ $firstLine == \#* ]]; then
 # │upgrade|zone.js|packaging|changelog|dev-infra|docs-infra|migrations
 # │ngcc|ve
 # summary: in present tense. Not capitalized. No period at the end.
+# further information: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
 LIMIT_STRING
 
   { cat .prepare-commit-msg-temp; cat $1; } > .prepare-commit-msg-temp2
