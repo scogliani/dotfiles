@@ -63,7 +63,7 @@ plugins=(
   git ubuntu ssh-agent python
 )
 
-zstyle :omz:plugins:ssh-agent identities bitbucket
+zstyle :omz:plugins:ssh-agent identities bitbucket github
 
 source $ZSH/oh-my-zsh.sh
 

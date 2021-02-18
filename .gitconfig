@@ -9,7 +9,7 @@
   editor = vim
   hooksPath = ~/.githooks
 [credential]
-	helper = cache --timeout 86400
+  helper = cache --timeout 86400
 [push]
   default = simple
 [filter "lfs"]
