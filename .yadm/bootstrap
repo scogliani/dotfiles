@@ -4,6 +4,8 @@
 # be run from within $HOME (assuming this is the root of your dotfiles)
 cd "$HOME"
 
+mkdir .local
+
 echo "Init submodules"
 yadm submodule update --recursive --init
 
@@ -11,3 +13,12 @@ if command -v vim >/dev/null 2>&1; then
   echo "Bootstraping Vim"
   vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
 fi
+
+# light installation
+yadm clone https://github.com/haikarainen/light/releases/latest
+./configure && make
+sudo make install
+
+# docker-compose installation
+curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o .local/bin/docker-compose
+chmod u+x .local/bin/docker-compose

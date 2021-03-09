@@ -7,7 +7,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME=random
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -15,7 +15,7 @@ ZSH_THEME=random
 # looking in ~/.oh-my-zsh/themes/
 # An empty array have no effect
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-ZSH_THEME_RANDOM_CANDIDATES=( $(ls ~/.oh-my-zsh/themes/ | xargs basename -s .zsh-theme | awk '{printf("%s ", $0)}'))
+# ZSH_THEME_RANDOM_CANDIDATES=( $(ls ~/.oh-my-zsh/themes/ | xargs basename -s .zsh-theme | awk '{printf("%s ", $0)}'))
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -60,7 +60,7 @@ ZSH_THEME_RANDOM_CANDIDATES=( $(ls ~/.oh-my-zsh/themes/ | xargs basename -s .zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git ubuntu ssh-agent python
+  git ubuntu ssh-agent python aws
 )
 
 zstyle :omz:plugins:ssh-agent identities bitbucket github

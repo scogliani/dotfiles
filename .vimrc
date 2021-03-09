@@ -24,6 +24,8 @@ Plug 'tell-k/vim-autopep8'
 Plug 'pbondoer/vim-42header'
 Plug 'wakatime/vim-wakatime'
 Plug 'mileszs/ack.vim'
+Plug 'tyru/open-browser.vim'
+Plug 'aklt/plantuml-syntax'
 
 " colorscheme
 Plug 'vim-scripts/darktango.vim'
@@ -184,3 +186,7 @@ set statusline+=\ %{LinterStatus()}
 
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
+
+
+" open-browser
+" for more information: help openbrowser.txt
