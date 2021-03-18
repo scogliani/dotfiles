@@ -15,15 +15,13 @@ LIMIT_STRING
 
 __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 __file="${__dir}/$(basename "${BASH_SOURCE[0]}")"
-__base="$(basename ${__file} .sh)"
+__base="$(basename "${__file}" .sh)"
 __root="$(cd "$(dirname "${__dir}")" && pwd)"
 
-opt=$(getopt \
-  --name ${0} \
+if opt=$(getopt \
+  --name "${0}" \
   --options h \
-  --longoptions help -- "${@}" )
-
-if [ "${?}" != 0 ]; then
+  --longoptions help -- "${@}" ); then
   usage
 fi
 
