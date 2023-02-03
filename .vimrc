@@ -67,8 +67,12 @@ let xml_syntax_folding=1      " XML
 " template files
 if has("autocmd")
   augroup templates
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-    autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
+    au!
+      " read in template files
+      autocmd BufNewFile *.* silent! execute '0r $HOME/vimfiles/templates/skeleton.'.expand("<afile>:e")
+
+      " parse special text in the templates after the read
+      autocmd BufNewFile * %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(submatch(1))#ge
   augroup END
 endif
 

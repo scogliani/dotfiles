@@ -1,6 +1,7 @@
 [alias]
   a = add
   ap = add -p
+  au = add -u
   br = branch
   bl = blame
   bra = branch -a -vvv
