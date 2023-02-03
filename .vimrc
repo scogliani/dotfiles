@@ -69,7 +69,7 @@ if has("autocmd")
   augroup templates
     au!
       " read in template files
-      autocmd BufNewFile *.* silent! execute '0r $HOME/vimfiles/templates/skeleton.'.expand("<afile>:e")
+      autocmd BufNewFile *.* silent! execute '0r ~/.vim/templates/skeleton.'.expand("<afile>:e")
 
       " parse special text in the templates after the read
       autocmd BufNewFile * %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(submatch(1))#ge
@@ -117,7 +117,6 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " editorconfig
 " for more information: help editorconfig.txt
-let g:EditorConfig_core_mode="external_command"
 let g:EditorConfig_exec_path="/usr/bin/editorconfig"
 let g:EditorConfig_exclude_patterns=['fugitive://.*']
 let g:EditorConfig_max_line_indicator="line"
