@@ -101,3 +101,14 @@ source ~/.exports
 source ~/.sources
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Worklife
+source ~/worklife/worklife.env
+source ~/worklife/worklife/source.env
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Created by `pipx` on 2024-09-27 16:35:02
+export PATH="$PATH:/home/scogliani/.local/bin"
