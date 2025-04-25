@@ -63,7 +63,7 @@ plugins=(
   git ubuntu ssh-agent python aws
 )
 
-zstyle :omz:plugins:ssh-agent identities bitbucket github
+zstyle :omz:plugins:ssh-agent identities worklife_id_ed25519
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,10 +101,6 @@ source ~/.exports
 source ~/.sources
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Worklife
-source ~/worklife/worklife.env
-source ~/worklife/worklife/source.env
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
