@@ -5,6 +5,9 @@ set -o pipefail
 set -o nounset
 set -o xtrace
 
+OPTIONS=h
+LONGOPTS=help
+
 usage()
 {
   cat << LIMIT_STRING
@@ -18,10 +21,11 @@ __file="${__dir}/$(basename "${BASH_SOURCE[0]}")"
 __base="$(basename "${__file}" .sh)"
 __root="$(cd "$(dirname "${__dir}")" && pwd)"
 
-if opt=$(getopt \
+if ! opt=$(getopt \
   --name "${0}" \
-  --options h \
-  --longoptions help -- "${@}" ); then
+  --options=$OPTIONS \
+  --longoptions=$LONGOPTS \
+  -- "${@}" ); then
   usage
 fi
 
