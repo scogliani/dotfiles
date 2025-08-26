@@ -28,3 +28,4 @@
   st = status -sb
   subi = submodule init
   subu = submodule update --init --recursive
+  rp = restore -p
